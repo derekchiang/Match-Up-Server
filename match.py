@@ -7,12 +7,10 @@ import json
 from tornado.options import define, options
 from algo import subset
 
-define('num_teams', default=2, help='Number of teams')
-define('num_per_team', default=5, help='Number of players per team')
+define('num_teams', default=2, help='Number of teams', type=int)
+define('num_per_team', default=5, help='Number of players per team', type=int)
 
 class Match(object):
-	num_teams = options.num_teams
-	num_per_team = options.num_per_team
 	callbacks = []
 	players = {}
 
@@ -24,9 +22,9 @@ class Match(object):
 
 	def add_players(self, num_players, team_name):
 		self.players[team_name] = int(num_players)
-		matches, remaining_players = subset.get_n_subsets(self.num_teams, \
+		matches, remaining_players = subset.get_n_subsets(options.num_teams, \
 														  list(self.players.values()), \
-														  self.num_per_team)
+														  options.num_per_team)
 		final_result = []
 		for k in matches:
 			if k == None:
