@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Online Match Up System</title>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="{{ static_url('main.js') }}" type="application/javascript"></script>
+	</head>
+
+	<body>
+		<div id="go">
+			<p>Team name: <input id="team_name" name="team_name"></p>
+			<p>Number of Players: <input id="num_players" name="num_players"></p>
+			<button id="go-button">Go</button>
+		</div>
+		<div id="quit" style="display: none;">
+			<p>Matching...</p>
+			<button id="quit-button">Quit</button>
+		</div>
+		<div id="match" style="display: none;"></div>
+	</body>
+</html>
