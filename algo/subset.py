@@ -1,3 +1,6 @@
+# The algorithm is given here:
+# http://en.wikipedia.org/wiki/Subset_sum_problem#Pseudo-polynomial_time_dynamic_programming_solution
+
 def get_subset(lst, s):
 	'''Given a list of integer `lst` and an integer s, returns
 	a subset of lst that sums to s, as well as lst minus that subset
